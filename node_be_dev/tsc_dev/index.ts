@@ -1,14 +1,11 @@
-interface Student {
+type Student = {
 	name: string,
   id?: number | string,
 	age: number,
 	department: string
 };
 
-interface Teacher {
-	name: string,
-	age: number,
-	department: string,
+type Teacher =  Student & {
 	title: string
 };
 
