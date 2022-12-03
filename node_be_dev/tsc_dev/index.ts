@@ -1,24 +1,16 @@
-type Student = {
-	name: string,
-  id?: number | string,
-	age: number,
-	department: string
+const getItem = <T>(arr: T[]): T => {
+  return arr[1];
 };
 
-type Teacher =  Student & {
-	title: string
-};
+const arr1 = [2, 3, 4];
+const arr2 = ['one', 'two', 'three'];
 
-const showStudent = (student: Student): string => {
-	console.log(`Department of ${student.department}`);
-	return student.name;
-};
+const one = getItem(arr1);
+const one_generic = <number>getItem(arr1);
+const two = getItem(arr2);
+const two_generic = <string>getItem(arr2);
 
-const abiola: Teacher = {
-	name: "A.B Abiola",
-	department: "WREE",
-	age: 15, 
-	title: "Ph.D"
-};
-
-console.log(showStudent(abiola));
+console.log(one, typeof one);
+console.log(one_generic, typeof one_generic);
+console.log(two, typeof two);
+console.log(two_generic, typeof two_generic);
