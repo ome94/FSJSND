@@ -1,5 +1,6 @@
 interface Student {
 	name: string,
+  id?: number | string,
 	age: number,
 	department: string
 };
