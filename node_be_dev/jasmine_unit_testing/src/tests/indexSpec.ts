@@ -1,7 +1,12 @@
-import myFunc from "../index";
+import supertest from "supertest";
 
-console.log('Tests started!...');
+import app from "../index";
 
-it('expect myFunc(5) to equal 25', () => {
-  expect(myFunc(5)).toEqual(25);
+const request = supertest(app);
+
+describe('Test my Endpoint', () => {
+  it('GET /api: expects "Hello, world"', async () => {
+    const response = await request.get('/api');
+    expect(response.status).toBe(200);
+  });
 });
